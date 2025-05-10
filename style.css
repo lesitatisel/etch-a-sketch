@@ -5,3 +5,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container {
+  background-color: #eac9c9;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  background-color: beige;
+  outline: 1px solid black;
+}
+
+.cell.active {
+  background-color: rgba(211, 240, 240, 0.886);
+}

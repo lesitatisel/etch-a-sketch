@@ -1,7 +1,9 @@
 const container = document.querySelector(".grid-container");
+const sizeBtn = document.querySelector(".sizeBtn");
 
 
-const makeGrid = function(num) {
+
+const makeGrid = function(num=16) {
   for (let i=0; i<num; i++) {
     const row = document.createElement("div");
     row.classList.add("row")
@@ -23,5 +25,15 @@ cells.forEach(cell => {
   cell.addEventListener("mouseenter", () => {
     cell.classList.add("active");
   })
-  
 });
+
+
+const clearGrid = function() {
+  container.innerHTML = "";
+}
+
+sizeBtn.addEventListener("click", () => {
+  const num = parseInt(prompt("Enter the size of the grid: "));
+  clearGrid();
+  makeGrid(num);
+})

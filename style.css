@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  height: 100%;
 }
 
 .sizeBtn {
@@ -23,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-bottom: 24px;
 }
 
 h1 {
@@ -43,10 +44,10 @@ h1 {
 .cell {
   height: 10px;
   width: 10px;
-  background-color: beige;
+  background-color: rgb(239, 239, 227);
   outline: 1px solid black;
 }
 
 .cell.active {
-  background-color: rgba(211, 240, 240, 0.886);
+  background-color: rgba(171, 237, 200, 0.873);
 }

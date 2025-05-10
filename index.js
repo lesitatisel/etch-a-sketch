@@ -2,7 +2,6 @@ const container = document.querySelector(".grid-container");
 const sizeBtn = document.querySelector(".sizeBtn");
 
 
-
 const makeGrid = function(num=16) {
   for (let i=0; i<num; i++) {
     const row = document.createElement("div");
@@ -17,23 +16,30 @@ const makeGrid = function(num=16) {
   }
 }
 
-makeGrid(16);
-
-const cells = document.querySelectorAll(".cell");
-
-cells.forEach(cell => {
-  cell.addEventListener("mouseenter", () => {
-    cell.classList.add("active");
-  })
-});
-
-
 const clearGrid = function() {
   container.innerHTML = "";
 }
 
+const draw = function () {
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach(cell => {
+    cell.addEventListener("mouseenter", () => {
+      cell.classList.add("active");
+    })
+  });
+}
+
+makeGrid(16);
+draw();
+
 sizeBtn.addEventListener("click", () => {
-  const num = parseInt(prompt("Enter the size of the grid: "));
+  let num = parseInt(prompt("Enter the size of the grid: "));
+
+  if (num >= 100) {
+    num = 100;
+  }
+
   clearGrid();
   makeGrid(num);
+  draw();
 })
